@@ -13,7 +13,9 @@ English [Українська](/readme-ua.md)
 * [Release Notes](#release-notes)
 
 ## Features
-- [x] HTML: Pug compiler
+- [x] HTML:
+	- [x] Pug compiler
+	- [] Minify html
 
 ## Release Notes
 ### 0.1.1 - 2023-10-22
