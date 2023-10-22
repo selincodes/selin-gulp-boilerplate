@@ -1,5 +1,5 @@
-import gulp from 'gulp';
+import gulp from "gulp";
 
 export default {
-	gulp
-}
+  gulp
+};
