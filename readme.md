@@ -5,16 +5,19 @@ A template for creating static web projects using Gulp and Webpack
 
 English [Українська](/readme-ua.md)
 
-[![Version](https://img.shields.io/badge/Version-0.1.0-blue.svg)](https://github.com/selincodes/)
+[![Version](https://img.shields.io/badge/Version-0.1.1-blue.svg)](https://github.com/selincodes/)
 </div>
 
 ## Table of contents
 * [Features](#features)
 * [Release Notes](#release-notes)
 
-### Features
+## Features
+- [x] HTML: Pug compiler
 
-### Release Notes
-
+## Release Notes
+### 0.1.1 - 2023-10-22
+#### Features
+* Added: Pug compiler
 #### 0.1.0 - 2023-10-22
 * Initial release
