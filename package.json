@@ -1,0 +1,19 @@
+{
+  "name": "selin-gulp-boilerplate",
+  "version": "0.1.0",
+  "boilerplateVersion": "0.1.0",
+  "description": "A template for creating static web projects using Gulp and Webpack",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build"
+  },
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/selincodes/selin-gulp-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/selincodes/selin-gulp-boilerplate/issues"
+  },
+  "author": "Serhii Mykulyn <selincodes@gmail.com> (https://selin.codes/)",
+  "license": "ISC"
+}

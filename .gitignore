@@ -1,0 +1,8 @@
+.DS_Store
+/**/**/*.DS_Store
+.idea
+*.zip
+node_modules
+temp
+dist
+public
