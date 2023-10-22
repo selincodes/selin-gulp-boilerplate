@@ -1,0 +1,24 @@
+root = true
+
+[*]
+end_of_line = LF
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = all
+insert_final_newline = true
+
+[*.html]
+indent_style = tab
+
+[*.min.*]
+indent_style = ignore
+trim_trailing_whitespace = false
+insert_final_newline = ignore
+
+[Makefile]
+indent_style = tab
+
+[{package.json,.js,.stylelintrc,.scss}]
+indent_style = space
+indent_size = 2
