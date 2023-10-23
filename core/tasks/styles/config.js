@@ -1,8 +1,8 @@
 export default {
   sassConfig: {
-    outputStyle: 'expanded'
+    outputStyle: 'expanded',
   },
   rename: {
-    suffix: '.min'
-  }
-}
+    suffix: '.min',
+  },
+};

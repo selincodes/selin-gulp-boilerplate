@@ -1,4 +1,4 @@
-import gulp from "gulp";
+import gulp from 'gulp';
 
 // HTML/Pug
 import gulpPug from 'gulp-pug';
@@ -7,7 +7,7 @@ import gulpPug from 'gulp-pug';
 import gsass from 'gulp-sass';
 import * as sass from 'sass';
 import rename from 'gulp-rename';
-import autoPrefixer from 'gulp-autoprefixer'
+import autoPrefixer from 'gulp-autoprefixer';
 
 export default {
   gulp,
@@ -18,5 +18,5 @@ export default {
   gsass,
   sass,
   rename,
-  autoPrefixer
+  autoPrefixer,
 };

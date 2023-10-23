@@ -7,8 +7,12 @@ import config from './config.js';
 
 // Create task
 export const pug = () => {
-  return pl.gulp
-    .src([`${path.src}/*.pug`])
-    .pipe(pl.gulpPug(config.pug))
-    .pipe(pl.gulp.dest(path.dist))
-}
+  return (
+    pl.gulp
+      .src([`${path.src}/*.pug`])
+      // compiling pug
+      .pipe(pl.gulpPug(config.pug))
+      // output html
+      .pipe(pl.gulp.dest(path.dist))
+  );
+};
