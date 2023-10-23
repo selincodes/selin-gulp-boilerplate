@@ -8,6 +8,7 @@ import gsass from 'gulp-sass';
 import * as sass from 'sass';
 import rename from 'gulp-rename';
 import autoPrefixer from 'gulp-autoprefixer';
+import gcmq from 'gulp-group-css-media-queries';
 
 export default {
   gulp,
@@ -19,4 +20,5 @@ export default {
   sass,
   rename,
   autoPrefixer,
+  gcmq,
 };

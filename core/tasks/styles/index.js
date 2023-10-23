@@ -13,6 +13,8 @@ export const styles = () => {
       .src(path.styles.src)
       // compile scss
       .pipe(sass(config.sassConfig))
+      // grouping media queries
+      .pipe(pl.gcmq())
       // added suffix min to main.css
       .pipe(pl.rename(config.rename))
       //added auto prefixer
