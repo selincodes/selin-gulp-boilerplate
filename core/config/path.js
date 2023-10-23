@@ -5,5 +5,9 @@ const build = './build';
 export default {
   src,
   dist,
-  build
+  build,
+  styles: {
+    src: `${src}/assets/scss/**/*.scss`,
+    dist: `${dist}/css`
+  }
 };

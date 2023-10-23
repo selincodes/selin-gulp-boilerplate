@@ -19,6 +19,9 @@ insert_final_newline = ignore
 [Makefile]
 indent_style = tab
 
+[*.pug]
+indent_style = tab
+
 [{.json,.js,.stylelintrc,.scss}]
 indent_style = space
 indent_size = 2

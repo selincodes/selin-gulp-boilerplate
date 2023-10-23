@@ -3,9 +3,11 @@ import pl from './core/config/plugins.js';
 
 // Import tasks
 import { pug } from './core/tasks/pug/index.js';
+import { styles } from './core/tasks/styles/index.js';
 
 const mainTasks = pl.gulp.parallel(
-  pug
+  pug,
+  styles
 )
 
 const banner = async () => {
