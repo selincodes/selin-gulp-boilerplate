@@ -6,6 +6,8 @@ import gulpPug from 'gulp-pug';
 // Styles
 import gsass from 'gulp-sass';
 import * as sass from 'sass';
+import rename from 'gulp-rename';
+import autoPrefixer from 'gulp-autoprefixer'
 
 export default {
   gulp,
@@ -15,4 +17,6 @@ export default {
   // Styles
   gsass,
   sass,
+  rename,
+  autoPrefixer
 };

@@ -18,11 +18,14 @@
   },
   "author": "Serhii Mykulyn <selincodes@gmail.com> (https://selin.codes/)",
   "license": "ISC",
+  "browserslist": [
+    "last 3 versions"
+  ],
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-pug": "^5.0.0"
-  },
-  "dependencies": {
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.69.4"
   }
