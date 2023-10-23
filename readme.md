@@ -25,7 +25,7 @@ English | [Українська](/readme-ua.md)
   - [x] Autoprefixer
   - [x] Grouping media queries
   - [x] Cleaning and minify styles
-  - [ ] StyleLint
+  - [x] StyleLint
 - [ ] Images:
   - [ ] SVG optimization
   - [ ] PNG/JPG optimization
@@ -37,6 +37,13 @@ English | [Українська](/readme-ua.md)
 - [x] Prettier
 
 ## Release Notes
+
+### v0.1.2
+
+- Added: Compiling scss
+- Added: Autoprefixer
+- Added: Grouping media queries
+- Added: Stylelint
 
 ### v0.1.1
 
