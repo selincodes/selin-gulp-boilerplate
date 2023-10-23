@@ -1,4 +1,4 @@
-<div align="center"><img src="./logo.svg" alt="Vitejs logo" width="100" />
+<div align="center"><img src="./logo.svg" alt="SelinCodes logo" width="100" />
 
 # Selin Gulp Boilerplate
 A template for creating static web projects using Gulp and Webpack
