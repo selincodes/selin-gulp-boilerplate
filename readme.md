@@ -16,8 +16,8 @@ English [Українська](/readme-ua.md)
 - [x] HTML:
 	- [x] Pug compiler
 	- [ ] Minify html
-- [ ] Styles:
-	- [ ] Compiling SCSS
+- [x] Styles:
+	- [x] Compiling SCSS
 	- [ ] Autoprefixer
 	- [ ] Grouping media queries
 	- [ ] Minify styles
