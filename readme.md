@@ -24,7 +24,7 @@ English | [Українська](/readme-ua.md)
   - [x] Compiling SCSS
   - [x] Autoprefixer
   - [x] Grouping media queries
-  - [ ] Minify styles
+  - [x] Clean and minify styles
   - [ ] StyleLint
 - [ ] Images:
   - [ ] SVG optimization

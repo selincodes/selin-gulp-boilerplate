@@ -11,6 +11,7 @@ import * as sass from 'sass';
 import rename from 'gulp-rename';
 import autoPrefixer from 'gulp-autoprefixer';
 import gcmq from 'gulp-group-css-media-queries';
+import cleanCSS from 'gulp-clean-css';
 
 export default {
   // Basic
@@ -18,11 +19,11 @@ export default {
   deleteAsync,
   // HTML/Pug
   gulpPug,
-
   // Styles
   gsass,
   sass,
   rename,
   autoPrefixer,
   gcmq,
+  cleanCSS,
 };

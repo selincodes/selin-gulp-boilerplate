@@ -5,4 +5,7 @@ export default {
   rename: {
     suffix: '.min',
   },
+  cleanCSS: {
+    level: 2,
+  },
 };
