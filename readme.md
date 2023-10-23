@@ -26,7 +26,7 @@ English | [Українська](/readme-ua.md)
   - [x] Grouping media queries
   - [x] Cleaning and minify styles
   - [x] StyleLint
-- [ ] Images:
+- [x] Images:
   - [ ] SVG optimization
   - [ ] PNG/JPG optimization
   - [ ] Convert images to WebP

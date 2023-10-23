@@ -5,8 +5,9 @@ import pl from './core/config/plugins.js';
 import { pug } from './core/tasks/pug/index.js';
 import { styles } from './core/tasks/styles/index.js';
 import { deleteFolder } from './core/tasks/delete/index.js';
+import { images, moduleImages } from './core/tasks/images/index.js';
 
-const mainTasks = pl.gulp.parallel(pug, styles);
+const mainTasks = pl.gulp.parallel(pug, styles, images, moduleImages);
 
 const banner = async () => {
   console.log('========================');
