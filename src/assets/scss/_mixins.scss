@@ -1,0 +1,15 @@
+@mixin font($font-family, $file-name, $weight) {
+  @font-face {
+    font-family: '#{$font-family}';
+    font-style: normal;
+    font-weight: #{$weight};
+    src: url('../fonts/#{$file-name}.woff2') format('woff2'),
+    url('../fonts/#{$file-name}.woff') format('woff');
+    font-display: swap;
+  }
+}
+
+@mixin d3() {
+  transform: translateZ(0);
+  will-change: transform;
+}

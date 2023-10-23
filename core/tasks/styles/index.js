@@ -10,7 +10,7 @@ const sass = pl.gsass(pl.sass);
 export const styles = () => {
   return pl.gulp
     .src(path.styles.src)
-    .pipe(sass({outputStyle: 'expanded'}))
+    .pipe(sass(config.sassConfig))
     .pipe(pl.gulp.dest(path.styles.dist))
 
 }
