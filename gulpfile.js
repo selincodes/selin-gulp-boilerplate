@@ -2,10 +2,10 @@ import path from './core/config/path.js';
 import pl from './core/config/plugins.js';
 
 // Import tasks
-import { html } from './core/tasks/html/index.js';
+import { pug } from './core/tasks/pug/index.js';
 
 const mainTasks = pl.gulp.parallel(
-  html
+  pug
 )
 
 const banner = async () => {

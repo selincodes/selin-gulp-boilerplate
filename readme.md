@@ -37,5 +37,5 @@ English [Українська](/readme-ua.md)
 ### 0.1.1 - 2023-10-22
 #### Features
 * Added: Pug compiler
-#### 0.1.0 - 2023-10-22
+### 0.1.0 - 2023-10-22
 * Initial release

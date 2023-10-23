@@ -6,7 +6,7 @@ import pl from '../../config/plugins.js';
 import config from './config.js';
 
 // Create task
-export const html = () => {
+export const pug = () => {
   return pl.gulp
     .src([`${path.src}/*.pug`])
     .pipe(pl.gulpPug(config.pug))
