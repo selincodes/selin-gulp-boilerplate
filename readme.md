@@ -3,7 +3,7 @@
 # Selin Gulp Boilerplate
 A template for creating static web projects using Gulp and Webpack
 
-English [Українська](/readme-ua.md)
+English | [Українська](/readme-ua.md)
 
 [![Version](https://img.shields.io/badge/Version-0.1.1-blue.svg)](https://github.com/selincodes/)
 </div>
@@ -18,7 +18,7 @@ English [Українська](/readme-ua.md)
 	- [ ] Minify html
 - [x] Styles:
 	- [x] Compiling SCSS
-	- [ ] Autoprefixer
+	- [x] Autoprefixer
 	- [ ] Grouping media queries
 	- [ ] Minify styles
 	- [ ] StyleLint
