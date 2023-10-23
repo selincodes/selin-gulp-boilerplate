@@ -38,10 +38,10 @@ English | [Українська](/readme-ua.md)
 
 ## Release Notes
 
-### 0.1.1
+### v0.1.1
 
 - Added: Pug compiler
 
-### 0.1.0
+### v0.1.0
 
 - Initial release
