@@ -29,7 +29,7 @@ English | [Українська](/readme-ua.md)
 - [x] Images:
   - [ ] SVG optimization
   - [ ] PNG/JPG optimization
-  - [ ] Convert images to WebP
+  - [x] Convert images to WebP
 - [ ] Scripts:
   - [ ] Webpack
   - [ ] Babel

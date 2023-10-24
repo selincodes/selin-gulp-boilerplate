@@ -13,12 +13,17 @@ import autoPrefixer from 'gulp-autoprefixer';
 import gcmq from 'gulp-group-css-media-queries';
 import cleanCSS from 'gulp-clean-css';
 
+// Images
+import webp from 'gulp-webp';
+
 export default {
   // Basic
   gulp,
   deleteAsync,
+
   // HTML/Pug
   gulpPug,
+
   // Styles
   gsass,
   sass,
@@ -26,4 +31,7 @@ export default {
   autoPrefixer,
   gcmq,
   cleanCSS,
+
+  // Images
+  webp,
 };
