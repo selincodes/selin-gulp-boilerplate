@@ -14,5 +14,7 @@ export const pug = () => {
       .pipe(pl.gulpPug(config.pug))
       // output html
       .pipe(pl.gulp.dest(path.dist))
+      // browser reload
+      .pipe(pl.browserSync.stream())
   );
 };

@@ -5,6 +5,7 @@ import rename from 'gulp-rename';
 import newer from 'gulp-newer';
 import replace from 'gulp-replace';
 import flatten from 'gulp-flatten';
+import browserSync from 'browser-sync';
 
 // HTML/Pug
 import gulpPug from 'gulp-pug';
@@ -32,6 +33,7 @@ export default {
   newer,
   replace,
   flatten,
+  browserSync,
 
   // HTML/Pug
   gulpPug,

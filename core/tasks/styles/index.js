@@ -23,5 +23,7 @@ export const styles = () => {
       .pipe(pl.cleanCSS(config.cleanCSS))
       // output main.min.css
       .pipe(pl.gulp.dest(path.styles.dist))
+      // browser reload
+      .pipe(pl.browserSync.stream())
   );
 };
