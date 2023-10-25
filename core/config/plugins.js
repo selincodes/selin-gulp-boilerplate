@@ -3,6 +3,8 @@ import gulp from 'gulp';
 import { deleteAsync } from 'del';
 import rename from 'gulp-rename';
 import newer from 'gulp-newer';
+import replace from 'gulp-replace';
+import flatten from 'gulp-flatten';
 
 // HTML/Pug
 import gulpPug from 'gulp-pug';
@@ -20,7 +22,6 @@ import imageMin from 'gulp-imagemin';
 import pngQuant from 'imagemin-pngquant';
 import svgMin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
-import replace from 'gulp-replace';
 import svgSprite from 'gulp-svg-sprite';
 
 export default {
@@ -29,6 +30,8 @@ export default {
   deleteAsync,
   rename,
   newer,
+  replace,
+  flatten,
 
   // HTML/Pug
   gulpPug,
@@ -46,6 +49,5 @@ export default {
   pngQuant,
   svgMin,
   cheerio,
-  replace,
   svgSprite,
 };
