@@ -10,19 +10,13 @@ const sass = pl.gsass(pl.sass);
 export const styles = () => {
   return (
     pl.gulp
-      .src(path.styles.src)
-      // compile scss
-      .pipe(sass(config.sassConfig))
-      // grouping media queries
-      .pipe(pl.gcmq())
-      // added suffix min to main.css
-      .pipe(pl.rename(config.rename))
-      // added auto prefixer
-      .pipe(pl.autoPrefixer())
-      // clean and minify css
-      .pipe(pl.cleanCSS(config.cleanCSS))
-      // output main.min.css
-      .pipe(pl.gulp.dest(path.styles.dist))
+      .src(path.styles.src) // source directory
+      .pipe(sass(config.sassConfig)) // compiling scss
+      .pipe(pl.gcmq()) // grouping media queries
+      .pipe(pl.rename(config.rename)) // added suffix min to main.css
+      .pipe(pl.autoPrefixer()) // added auto prefixer
+      .pipe(pl.cleanCSS(config.cleanCSS)) // clean and minify css
+      .pipe(pl.gulp.dest(path.styles.dist)) // output directory
       // browser reload
       .pipe(pl.browserSync.stream())
   );

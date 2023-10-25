@@ -37,6 +37,8 @@ English | [Українська](/readme-ua.md)
   - [ ] ESLint
 - [x] Prettier
 - [x] Local Server
+- [ ] User Settings
+- [ ] Utilities
 
 ## Release Notes
 

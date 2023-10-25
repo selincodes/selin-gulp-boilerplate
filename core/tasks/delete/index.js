@@ -3,5 +3,5 @@ import path from '../../config/path.js';
 import pl from '../../config/plugins.js';
 
 export const deleteFolder = () => {
-  return pl.deleteAsync(path.dist);
+  return pl.deleteAsync(path.dist); // Delete dist folder
 };
