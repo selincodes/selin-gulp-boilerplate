@@ -6,7 +6,7 @@ A template for creating static web projects using Gulp and Webpack
 
 English | [Українська](/readme-ua.md)
 
-[![Version](https://img.shields.io/badge/Version-0.1.1-blue.svg)](https://github.com/selincodes/)
+[![Version](https://img.shields.io/badge/Version-0.1.3-blue.svg)](https://github.com/selincodes/)
 
 </div>
 
@@ -27,9 +27,10 @@ English | [Українська](/readme-ua.md)
   - [x] Cleaning and minify styles
   - [x] StyleLint
 - [x] Images:
-  - [ ] SVG optimization
-  - [ ] PNG/JPG optimization
+  - [x] SVG optimization
+  - [x] PNG/JPG optimization
   - [x] Convert images to WebP
+  - [x] Automatic creation of sprites
 - [ ] Scripts:
   - [ ] Webpack
   - [ ] Babel
@@ -37,6 +38,12 @@ English | [Українська](/readme-ua.md)
 - [x] Prettier
 
 ## Release Notes
+
+### v0.1.3
+
+- Added: SVG/PNG/JPG optimization
+- Added: Convert images to WebP
+- Added: Automatic creation of sprites
 
 ### v0.1.2
 

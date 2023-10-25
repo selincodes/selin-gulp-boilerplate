@@ -14,5 +14,6 @@ export default {
     src: `${src}/assets/img/**/*.{jpg,jpeg,png,webp,svg}`,
     dist: `${dist}/img`,
     modules: `${src}/modules/**/img/*.{jpg,jpeg,png,webp,svg}`,
+    sprite: `${src}/assets/sprite/*.svg`,
   },
 };
