@@ -6,7 +6,7 @@ A template for creating static web projects using Gulp and Webpack
 
 English | [Українська](/readme-ua.md)
 
-[![Version](https://img.shields.io/badge/Version-0.1.3-blue.svg)](https://github.com/selincodes/)
+[![Version](https://img.shields.io/badge/Version-0.1.4-blue.svg)](https://github.com/selincodes/)
 
 </div>
 
@@ -38,6 +38,10 @@ English | [Українська](/readme-ua.md)
 - [x] Prettier
 
 ## Release Notes
+
+### v0.1.4
+
+- Fix: Removed the folders structure for module images
 
 ### v0.1.3
 
