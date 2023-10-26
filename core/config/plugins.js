@@ -24,6 +24,7 @@ import pngQuant from 'imagemin-pngquant';
 import svgMin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import svgSprite from 'gulp-svg-sprite';
+import avif from 'gulp-avif';
 
 export default {
   // Basic
@@ -52,4 +53,5 @@ export default {
   svgMin,
   cheerio,
   svgSprite,
+  avif,
 };
