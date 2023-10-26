@@ -30,7 +30,7 @@ English | [Українська](/readme-ua.md)
   - [x] SVG optimization
   - [x] PNG/JPG optimization
   - [x] Convert images to WebP
-  - [ ] Convert images to Avif
+  - [x] Convert images to Avif
   - [x] Automatic creation of sprites
   - [ ] Responsive images
   - [ ] Retina images
