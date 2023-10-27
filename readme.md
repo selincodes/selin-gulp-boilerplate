@@ -6,7 +6,7 @@ A template for creating static web projects using Gulp and Webpack
 
 English | [Українська](/readme-ua.md)
 
-[![Version](https://img.shields.io/badge/Version-0.1.6-blue.svg)](https://github.com/selincodes/)
+[![Version](https://img.shields.io/badge/Version-0.1.7-blue.svg)](https://github.com/selincodes/)
 
 </div>
 
@@ -26,6 +26,7 @@ English | [Українська](/readme-ua.md)
   - [x] Grouping media queries
   - [x] Cleaning and minify styles
   - [x] StyleLint
+  - [x] Source maps
 - [x] Images:
   - [x] SVG optimization
   - [x] PNG/JPG optimization
@@ -38,6 +39,7 @@ English | [Українська](/readme-ua.md)
   - [ ] Webpack
   - [ ] Babel
   - [ ] ESLint
+  - [ ] Source maps
 - [x] Fonts
   - [x] Conversion ttf to woff2
 - [x] Prettier
@@ -46,6 +48,10 @@ English | [Українська](/readme-ua.md)
 - [ ] Utilities
 
 ## Release Notes
+
+### v0.1.7
+
+- Added: Source maps for scss
 
 ### v0.1.6
 

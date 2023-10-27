@@ -6,6 +6,7 @@ import newer from 'gulp-newer';
 import replace from 'gulp-replace';
 import flatten from 'gulp-flatten';
 import browserSync from 'browser-sync';
+import sourceMaps from 'gulp-sourcemaps';
 
 // HTML/Pug
 import gulpPug from 'gulp-pug';
@@ -38,6 +39,7 @@ export default {
   replace,
   flatten,
   browserSync,
+  sourceMaps,
 
   // HTML/Pug
   gulpPug,
