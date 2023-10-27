@@ -9,7 +9,7 @@ import config from './config.js';
 export const images = () => {
   return (
     pl.gulp
-      .src(path.images.src) // source directory
+      .src(path.images.srcNoSvg) // source directory
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.avif()) // convert to avif
       .pipe(pl.gulp.dest(path.images.output)) // output directory
@@ -32,7 +32,7 @@ export const images = () => {
 export const moduleImages = () => {
   return (
     pl.gulp
-      .src(path.images.modules) // source directory
+      .src(path.images.modulesNoSvg) // source directory
       .pipe(pl.flatten({ includeParents: 1 })) // delete folder structure
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.avif()) // convert to avif

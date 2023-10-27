@@ -11,11 +11,11 @@ import { server } from './core/tasks/server/index.js';
 // Task watcher
 const watcher = () => {
   pl.gulp.watch(`${path.src}/**/*.pug`, pug);
-  pl.gulp.watch(`${path.styles.src}`, styles);
+  pl.gulp.watch(path.styles.src, styles);
   pl.gulp.watch(`${path.src}/modules/**/*.scss`, styles);
-  pl.gulp.watch(`${path.images.src}`, images);
-  pl.gulp.watch(`${path.images.modules}`, moduleImages);
-  pl.gulp.watch(`${path.images.sprite}`, sprite);
+  pl.gulp.watch(path.images.src, images);
+  pl.gulp.watch(path.images.modules, moduleImages);
+  pl.gulp.watch(path.images.sprite, sprite);
 };
 
 const mainTasks = pl.gulp.parallel(pug, styles, images, moduleImages, sprite);
