@@ -6,7 +6,7 @@ A template for creating static web projects using Gulp and Webpack
 
 English | [Українська](/readme-ua.md)
 
-[![Version](https://img.shields.io/badge/Version-0.1.7-blue.svg)](https://github.com/selincodes/)
+[![Version](https://img.shields.io/badge/Version-0.1.8-blue.svg)](https://github.com/selincodes/)
 
 </div>
 
