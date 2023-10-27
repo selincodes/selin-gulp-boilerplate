@@ -6,7 +6,7 @@ A template for creating static web projects using Gulp and Webpack
 
 English | [Українська](/readme-ua.md)
 
-[![Version](https://img.shields.io/badge/Version-0.1.5-blue.svg)](https://github.com/selincodes/)
+[![Version](https://img.shields.io/badge/Version-0.1.6-blue.svg)](https://github.com/selincodes/)
 
 </div>
 
@@ -29,8 +29,8 @@ English | [Українська](/readme-ua.md)
 - [x] Images:
   - [x] SVG optimization
   - [x] PNG/JPG optimization
-  - [x] Convert images to WebP
-  - [x] Convert images to Avif
+  - [x] Conversion images to WebP
+  - [x] Conversion images to Avif
   - [x] Automatic creation of sprites
   - [ ] Responsive images
   - [ ] Retina images
@@ -38,12 +38,19 @@ English | [Українська](/readme-ua.md)
   - [ ] Webpack
   - [ ] Babel
   - [ ] ESLint
+- [x] Fonts
+  - [x] Conversion ttf to woff2
 - [x] Prettier
 - [x] Local Server
 - [ ] User Settings
 - [ ] Utilities
 
 ## Release Notes
+
+### v0.1.6
+
+- Added: Conversion images to Avif
+- Added: Conversion ttf to woff2
 
 ### v0.1.5
 
@@ -56,7 +63,7 @@ English | [Українська](/readme-ua.md)
 ### v0.1.3
 
 - Added: SVG/PNG/JPG optimization
-- Added: Convert images to WebP
+- Added: Conversion images to WebP
 - Added: Automatic creation of sprites
 
 ### v0.1.2

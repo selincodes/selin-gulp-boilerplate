@@ -26,6 +26,9 @@ import cheerio from 'gulp-cheerio';
 import svgSprite from 'gulp-svg-sprite';
 import avif from 'gulp-avif';
 
+// Fonts
+import ttf2woff from 'gulp-ttf2woff2';
+
 export default {
   // Basic
   gulp,
@@ -54,4 +57,7 @@ export default {
   cheerio,
   svgSprite,
   avif,
+
+  // Fonts
+  ttf2woff,
 };

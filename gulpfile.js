@@ -7,6 +7,7 @@ import { styles } from './core/tasks/styles/index.js';
 import { deleteFolder } from './core/tasks/delete/index.js';
 import { images, moduleImages, sprite } from './core/tasks/images/index.js';
 import { server } from './core/tasks/server/index.js';
+import { fonts } from './core/tasks/fonts/index.js';
 
 // Task watcher
 const watcher = () => {
@@ -16,9 +17,10 @@ const watcher = () => {
   pl.gulp.watch(path.images.src, images);
   pl.gulp.watch(path.images.modules, moduleImages);
   pl.gulp.watch(path.images.sprite, sprite);
+  pl.gulp.watch(path.fonts.src, fonts);
 };
 
-const mainTasks = pl.gulp.parallel(pug, styles, images, moduleImages, sprite);
+const mainTasks = pl.gulp.parallel(pug, styles, images, moduleImages, sprite, fonts);
 
 const banner = async () => {
   console.log('========================');

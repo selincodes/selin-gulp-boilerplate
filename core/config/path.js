@@ -18,4 +18,8 @@ export default {
     modulesNoSvg: `${src}/modules/**/img/*.{jpg,jpeg,png,gif}`,
     sprite: `${src}/assets/sprite/*.svg`,
   },
+  fonts: {
+    src: `${src}/assets/fonts/**/*.ttf`,
+    output: `${output}/fonts`,
+  },
 };
