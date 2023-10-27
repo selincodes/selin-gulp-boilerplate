@@ -33,19 +33,19 @@ export const moduleImages = () => {
   return (
     pl.gulp
       .src(path.images.modulesNoSvg) // source directory
-      .pipe(pl.flatten({ includeParents: 1 })) // delete folder structure
+      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.avif()) // convert to avif
       .pipe(pl.gulp.dest(path.images.output)) // output directory
 
       .pipe(pl.gulp.src(path.images.modules)) // source directory
-      .pipe(pl.flatten({ includeParents: 1 })) // delete folder structure
+      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.webp(config.webp)) // convert to webp
       .pipe(pl.gulp.dest(path.images.output)) // output directory
 
       .pipe(pl.gulp.src(path.images.modules)) // source directory
-      .pipe(pl.flatten({ includeParents: 1 })) // delete folder structure
+      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.imageMin(config.imageMin)) // images optimization
       .pipe(pl.gulp.dest(path.images.output)) // output directory
