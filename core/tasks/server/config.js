@@ -3,7 +3,7 @@ import path from '../../config/path.js';
 export default {
   browser: {
     server: {
-      baseDir: path.dist,
+      baseDir: path.output,
     },
     open: false,
     notify: false,

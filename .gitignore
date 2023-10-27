@@ -4,5 +4,4 @@
 *.zip
 node_modules
 temp
-dist
-public
+app

@@ -16,7 +16,7 @@ export const styles = () => {
       .pipe(pl.rename(config.rename)) // added suffix min to main.css
       .pipe(pl.autoPrefixer()) // added auto prefixer
       .pipe(pl.cleanCSS(config.cleanCSS)) // clean and minify css
-      .pipe(pl.gulp.dest(path.styles.dist)) // output directory
+      .pipe(pl.gulp.dest(path.styles.output)) // output directory
       // browser reload
       .pipe(pl.browserSync.stream())
   );
