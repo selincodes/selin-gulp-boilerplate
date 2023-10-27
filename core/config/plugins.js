@@ -30,6 +30,12 @@ import avif from 'gulp-avif';
 // Fonts
 import ttf2woff from 'gulp-ttf2woff2';
 
+// Scripts
+import babel from 'gulp-babel';
+import webpackStream from 'webpack-stream';
+import terserPlugin from 'terser-webpack-plugin';
+import uglify from 'gulp-uglify';
+
 export default {
   // Basic
   gulp,
@@ -62,4 +68,10 @@ export default {
 
   // Fonts
   ttf2woff,
+
+  // Scripts
+  babel,
+  webpackStream,
+  terserPlugin,
+  uglify,
 };

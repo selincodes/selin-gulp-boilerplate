@@ -35,11 +35,11 @@ English | [Українська](/readme-ua.md)
   - [x] Automatic creation of sprites
   - [ ] Responsive images
   - [ ] Retina images
-- [ ] Scripts:
-  - [ ] Webpack
-  - [ ] Babel
-  - [ ] ESLint
-  - [ ] Source maps
+- [x] Scripts:
+  - [x] Webpack
+  - [x] Babel
+  - [x] ESLint
+  - [x] Source maps
 - [x] Fonts
   - [x] Conversion ttf to woff2
 - [x] Prettier
@@ -48,6 +48,13 @@ English | [Українська](/readme-ua.md)
 - [ ] Utilities
 
 ## Release Notes
+
+### v0.1.8
+
+- Added: Webpack
+- Added: Babel
+- Added: ESLint
+- Added: Source maps for js
 
 ### v0.1.7
 

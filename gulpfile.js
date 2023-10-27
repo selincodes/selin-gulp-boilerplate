@@ -8,6 +8,7 @@ import { deleteFolder } from './core/tasks/delete/index.js';
 import { images, moduleImages, sprite } from './core/tasks/images/index.js';
 import { server } from './core/tasks/server/index.js';
 import { fonts } from './core/tasks/fonts/index.js';
+import { scripts } from './core/tasks/scripts/index.js';
 
 // Task watcher
 const watcher = () => {
@@ -18,9 +19,11 @@ const watcher = () => {
   pl.gulp.watch(path.images.modules, moduleImages);
   pl.gulp.watch(path.images.sprite, sprite);
   pl.gulp.watch(path.fonts.src, fonts);
+  pl.gulp.watch(`${path.scripts.src}/**/*.js`, scripts);
+  pl.gulp.watch(`${path.src}/modules/**/*.js`, scripts);
 };
 
-const mainTasks = pl.gulp.parallel(pug, styles, images, moduleImages, sprite, fonts);
+const mainTasks = pl.gulp.parallel(pug, styles, images, moduleImages, sprite, fonts, scripts);
 
 const banner = async () => {
   console.log('========================');

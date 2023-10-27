@@ -22,4 +22,8 @@ export default {
     src: `${src}/assets/fonts/**/*.ttf`,
     output: `${output}/fonts`,
   },
+  scripts: {
+    src: `${src}/assets/js`,
+    output: `${output}/js`,
+  },
 };
