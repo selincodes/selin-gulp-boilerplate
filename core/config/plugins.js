@@ -26,6 +26,7 @@ import svgMin from 'gulp-svgmin';
 import cheerio from 'gulp-cheerio';
 import svgSprite from 'gulp-svg-sprite';
 import avif from 'gulp-avif';
+import responsive from 'gulp-optimize-images';
 
 // Fonts
 import ttf2woff from 'gulp-ttf2woff2';
@@ -65,6 +66,7 @@ export default {
   cheerio,
   svgSprite,
   avif,
+  responsive,
 
   // Fonts
   ttf2woff,

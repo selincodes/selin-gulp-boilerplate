@@ -13,8 +13,8 @@ export const images = () => {
       .src(path.images.srcNoSvg) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(
-        pl.rename((path) => {
-          path.dirname += '/' + path.basename;
+        pl.rename((imagePath) => {
+          imagePath.dirname += `/${imagePath.basename}`;
         }),
       )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
@@ -25,8 +25,8 @@ export const images = () => {
       .pipe(pl.gulp.src(path.images.src)) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(
-        pl.rename((path) => {
-          path.dirname += '/' + path.basename;
+        pl.rename((imagePath) => {
+          imagePath.dirname += `/${imagePath.basename}`;
         }),
       )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
@@ -36,8 +36,8 @@ export const images = () => {
       .pipe(pl.gulp.src(path.images.src))
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(
-        pl.rename((path) => {
-          path.dirname += '/' + path.basename;
+        pl.rename((imagePath) => {
+          imagePath.dirname += `/${imagePath.basename}`;
         }),
       )
       .pipe(pl.newer(path.images.output))
@@ -56,8 +56,8 @@ export const moduleImages = () => {
       .src(path.images.modulesNoSvg) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(
-        pl.rename((path) => {
-          path.dirname += '/' + path.basename;
+        pl.rename((imagePath) => {
+          imagePath.dirname += `/${imagePath.basename}`;
         }),
       )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
@@ -68,8 +68,8 @@ export const moduleImages = () => {
       .pipe(pl.gulp.src(path.images.modules)) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(
-        pl.rename((path) => {
-          path.dirname += '/' + path.basename;
+        pl.rename((imagePath) => {
+          imagePath.dirname += `/${imagePath.basename}`;
         }),
       )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
@@ -80,8 +80,8 @@ export const moduleImages = () => {
       .pipe(pl.gulp.src(path.images.modules))
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
       .pipe(
-        pl.rename((path) => {
-          path.dirname += '/' + path.basename;
+        pl.rename((imagePath) => {
+          imagePath.dirname += `/${imagePath.basename}`;
         }),
       )
       .pipe(pl.newer(path.images.output))
