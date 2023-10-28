@@ -5,9 +5,11 @@
   fill: #000;
 }
 
+/* stylelint-disable */
 {{#shapes}}
-.icon-{{base}} {
-  font-size: calc({{height.inner}}/10)*1rem;
-  width: calc({{width.inner}}/{{height.inner}})*1em;
-}
+  .icon-{{base}} {
+    font-size: calc({{height.inner}}/10)*1rem;
+    width: calc({{width.inner}}/{{height.inner}})*1em;
+  }
 {{/shapes}}
+/* stylelint-enable */

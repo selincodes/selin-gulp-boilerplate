@@ -1,4 +1,5 @@
 import pl from '../../config/plugins.js';
+
 export default {
   webp: {
     quality: 80,
@@ -16,7 +17,7 @@ export default {
     },
   },
   cheerio: {
-    run: function ($) {
+    run: ($) => {
       $('[fill]').removeAttr('fill');
       $('[stroke]').removeAttr('strole');
       $('[style]').removeAttr('style');
