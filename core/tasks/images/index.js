@@ -9,19 +9,39 @@ import config from './config.js';
 export const images = () => {
   return (
     pl.gulp
+      // avif
       .src(path.images.srcNoSvg) // source directory
+      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(
+        pl.rename((path) => {
+          path.dirname += '/' + path.basename;
+        }),
+      )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.avif()) // convert to avif
       .pipe(pl.gulp.dest(path.images.output)) // output directory
 
+      // webp
       .pipe(pl.gulp.src(path.images.src)) // source directory
+      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(
+        pl.rename((path) => {
+          path.dirname += '/' + path.basename;
+        }),
+      )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.webp(config.webp)) // convert to webp
       .pipe(pl.gulp.dest(path.images.output)) // output directory
-
-      .pipe(pl.gulp.src(path.images.src)) // source directory
-      .pipe(pl.newer(path.images.output)) // check if the files have changed
-      .pipe(pl.imageMin(config.imageMin)) // images optimization
+      // all images
+      .pipe(pl.gulp.src(path.images.src))
+      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(
+        pl.rename((path) => {
+          path.dirname += '/' + path.basename;
+        }),
+      )
+      .pipe(pl.newer(path.images.output))
+      .pipe(pl.imageMin(config.imageMin))
       .pipe(pl.gulp.dest(path.images.output)) // output directory
       // browser reload
       .pipe(pl.browserSync.stream())
@@ -32,23 +52,42 @@ export const images = () => {
 export const moduleImages = () => {
   return (
     pl.gulp
+      // avif
       .src(path.images.modulesNoSvg) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(
+        pl.rename((path) => {
+          path.dirname += '/' + path.basename;
+        }),
+      )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.avif()) // convert to avif
       .pipe(pl.gulp.dest(path.images.output)) // output directory
 
+      // webp
       .pipe(pl.gulp.src(path.images.modules)) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(
+        pl.rename((path) => {
+          path.dirname += '/' + path.basename;
+        }),
+      )
       .pipe(pl.newer(path.images.output)) // check if the files have changed
       .pipe(pl.webp(config.webp)) // convert to webp
       .pipe(pl.gulp.dest(path.images.output)) // output directory
 
-      .pipe(pl.gulp.src(path.images.modules)) // source directory
+      // all images
+      .pipe(pl.gulp.src(path.images.modules))
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.newer(path.images.output)) // check if the files have changed
-      .pipe(pl.imageMin(config.imageMin)) // images optimization
+      .pipe(
+        pl.rename((path) => {
+          path.dirname += '/' + path.basename;
+        }),
+      )
+      .pipe(pl.newer(path.images.output))
+      .pipe(pl.imageMin(config.imageMin))
       .pipe(pl.gulp.dest(path.images.output)) // output directory
+
       // browser reload
       .pipe(pl.browserSync.stream())
   );
