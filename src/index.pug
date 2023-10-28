@@ -1,6 +1,11 @@
-extends ./modules/base/base
+extends ./pug/modules/base/base
+
+//- mixins
+include ./pug/mixins/icon
 
 block content
-	include ./modules/banner/banner
+	include ./pug/modules/banner/banner
+
+	+icon('selin')
 
 	script(src='./js/bundle.js')

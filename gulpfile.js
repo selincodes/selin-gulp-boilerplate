@@ -23,10 +23,10 @@ const watcher = () => {
   pl.gulp.watch(`${path.scripts.src}/**/*.js`, scripts); // scripts from assets
 
   // modules
-  pl.gulp.watch(`${path.src}/modules/**/*.scss`, styles); // styles from modules
+  pl.gulp.watch(`${path.src}/pug/modules/**/*.scss`, styles); // styles from modules
   pl.gulp.watch(path.images.modules, images); // images from modules
   pl.gulp.watch(path.images.modulesSvg, copySVG); // svg from modules
-  pl.gulp.watch(`${path.src}/modules/**/*.js`, scripts); // scripts from modules
+  pl.gulp.watch(`${path.src}/pug/modules/**/*.js`, scripts); // scripts from modules
 };
 
 const mainTasks = pl.gulp.parallel(pug, styles, images, copySVG, sprite, fonts, scripts);

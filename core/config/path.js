@@ -14,8 +14,8 @@ export default {
     src: `${src}/assets/img/**/*.{jpg,jpeg,png,git}`,
     svg: `${src}/assets/img/**/*.svg`,
     output: `${output}/img`,
-    modules: `${src}/modules/**/img/*.{jpg,jpeg,png,gif}`,
-    modulesSvg: `${src}/modules/**/img/**/*.svg`,
+    modules: `${src}/pug/modules/**/img/*.{jpg,jpeg,png,gif}`,
+    modulesSvg: `${src}/pug/modules/**/img/**/*.svg`,
     sprite: `${src}/assets/sprite/*.svg`,
   },
   fonts: {

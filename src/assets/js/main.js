@@ -1,4 +1,4 @@
-import '../../modules/all-modules.js';
+import '../../pug/modules/all-modules.js';
 
 const init = () => {
   console.log('init');
