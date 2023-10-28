@@ -11,11 +11,11 @@ export default {
     output: `${output}/css`,
   },
   images: {
-    src: `${src}/assets/img/**/*.{jpg,jpeg,png,webp,svg}`,
-    srcNoSvg: `${src}/assets/img/**/*.{jpg,jpeg,png,gif}`,
+    src: `${src}/assets/img/**/*.{jpg,jpeg,png,git}`,
+    svg: `${src}/assets/img/**/*.svg`,
     output: `${output}/img`,
-    modules: `${src}/modules/**/img/*.{jpg,jpeg,png,webp,svg}`,
-    modulesNoSvg: `${src}/modules/**/img/*.{jpg,jpeg,png,gif}`,
+    modules: `${src}/modules/**/img/*.{jpg,jpeg,png,gif}`,
+    modulesSvg: `${src}/modules/**/img/**/*.svg`,
     sprite: `${src}/assets/sprite/*.svg`,
   },
   fonts: {

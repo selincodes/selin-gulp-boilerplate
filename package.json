@@ -1,7 +1,7 @@
 {
   "name": "selin-gulp-boilerplate",
-  "version": "0.1.8",
-  "boilerplateVersion": "0.1.8",
+  "version": "0.1.9",
+  "boilerplateVersion": "0.1.9",
   "description": "A template for creating static web projects using Gulp and Webpack",
   "main": "gulpfile.js",
   "type": "module",
@@ -47,6 +47,7 @@
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-imagemin": "^8.0.0",
     "gulp-newer": "^1.4.0",
+    "gulp-optimize-images": "^1.1.5",
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
