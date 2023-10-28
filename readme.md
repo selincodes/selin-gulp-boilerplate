@@ -35,6 +35,7 @@ English | [Українська](/readme-ua.md)
   - [x] Automatic creation of sprites
   - [x] Responsive images
   - [ ] Retina images
+  - [ ] Lazy loading
 - [x] Scripts:
   - [x] Webpack
   - [x] Babel
