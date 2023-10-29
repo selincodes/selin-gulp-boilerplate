@@ -39,5 +39,8 @@ const banner = async () => {
 };
 
 const dev = pl.gulp.series(banner, deleteFolder, mainTasks, pl.gulp.parallel(watcher, server));
+const build = pl.gulp.series(banner, deleteFolder, mainTasks);
+
+export { build };
 
 pl.gulp.task('default', dev);

@@ -8,8 +8,17 @@ export const fonts = () => {
     pl.gulp
       .src(path.fonts.src) // source directory
       .pipe(pl.ttf2woff()) // conversion ttf to woff2
-      .pipe(pl.gulp.dest(path.fonts.output)) // output directory
+
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.fonts.output), // dev output
+          pl.gulp.dest(path.fonts.build), // build output
+        ),
+      )
+
       // browser reload
-      .pipe(pl.browserSync.stream())
+      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
   );
 };

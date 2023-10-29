@@ -1,6 +1,8 @@
+import pl from '../../config/plugins.js';
+
 export default {
   webPack: {
-    mode: 'development',
+    mode: pl.isDev ? 'development' : 'production',
     output: {
       filename: 'bundle.js',
     },
@@ -27,6 +29,7 @@ export default {
       ],
     },
   },
+  devtool: pl.isDev ? 'source-map' : false,
   babel: {
     presets: ['@babel/preset-env'],
   },

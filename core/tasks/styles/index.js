@@ -11,15 +11,24 @@ export const styles = () => {
   return (
     pl.gulp
       .src(path.styles.src) // source directory
-      .pipe(pl.sourceMaps.init()) // init source maps
+      .pipe(pl.iif(pl.isDev, pl.sourceMaps.init())) // init source maps
       .pipe(sass(config.sassConfig)) // compiling scss
       .pipe(pl.gcmq()) // grouping media queries
       .pipe(pl.rename(config.rename)) // added suffix min to main.css
       .pipe(pl.autoPrefixer()) // added auto prefixer
-      .pipe(pl.cleanCSS(config.cleanCSS)) // clean and minify css
-      .pipe(pl.sourceMaps.write('../maps')) // write source maps
-      .pipe(pl.gulp.dest(path.styles.output)) // output directory
+      .pipe(pl.iif(pl.isBuild, pl.cleanCSS(config.cleanCSS))) // clean and minify css
+      .pipe(pl.iif(pl.isDev, pl.sourceMaps.write('../maps'))) // write source maps
+
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.styles.output), // dev output
+          pl.gulp.dest(path.styles.build), // build output
+        ),
+      )
+
       // browser reload
-      .pipe(pl.browserSync.stream())
+      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
   );
 };

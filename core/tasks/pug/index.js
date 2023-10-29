@@ -11,8 +11,17 @@ export const pug = () => {
     pl.gulp
       .src([`${path.src}/index.pug`]) // source directory
       .pipe(pl.gulpPug(config.pug)) // compiling pug
-      .pipe(pl.gulp.dest(path.output)) // output directory
+
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.output), // dev output
+          pl.gulp.dest(path.build), // build output
+        ),
+      )
+
       // browser reload
-      .pipe(pl.browserSync.stream())
+      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
   );
 };

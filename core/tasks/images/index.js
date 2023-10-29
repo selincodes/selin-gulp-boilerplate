@@ -12,10 +12,19 @@ export const copySVG = () => {
       // svg
       .src([path.images.svg, path.images.modulesSvg]) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.newer(path.images.output)) // check if the files have changed
-      .pipe(pl.gulp.dest(path.images.output)) // output directory
+      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
+
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.images.output), // dev output
+          pl.gulp.dest(path.images.build), // build output
+        ),
+      )
+
       // browser reload
-      .pipe(pl.browserSync.stream())
+      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
   );
 };
 
@@ -30,28 +39,50 @@ export const images = () => {
       // resize images
       .src([path.images.src, path.images.modules]) // source directory
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.newer(path.images.output)) // check if the files have changed
+      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
       .pipe(
         pl.responsive({
           sharpOptions,
           sizes,
         }),
       )
-      .pipe(pl.gulp.dest(path.images.output)) // output directory
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.images.output), // dev output
+          pl.gulp.dest(path.images.build), // build output
+        ),
+      )
 
       // webp
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.newer(path.images.output)) // check if the files have changed
+      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
       .pipe(pl.webp(config.webp)) // convert to webp
-      .pipe(pl.gulp.dest(path.images.output)) // output directory
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.images.output), // dev output
+          pl.gulp.dest(path.images.build), // build output
+        ),
+      )
 
       // all images
       .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.newer(path.images.output))
-      .pipe(pl.gulp.dest(path.images.output)) // output directory
+      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
+      .pipe(pl.iif(pl.isBuild, pl.imageMin(config.imageMin)))
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.images.output), // dev output
+          pl.gulp.dest(path.images.build), // build output
+        ),
+      )
 
       // browser reload
-      .pipe(pl.browserSync.stream())
+      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
   );
 };
 
@@ -64,8 +95,17 @@ export const sprite = () => {
       .pipe(pl.cheerio(config.cheerio)) // removing attributes
       .pipe(pl.replace('>', '>'))
       .pipe(pl.svgSprite(config.sprite)) // removing attributes
-      .pipe(pl.gulp.dest(path.images.output)) // output directory
+
+      // output directory
+      .pipe(
+        pl.iif(
+          pl.isDev, // is dev?
+          pl.gulp.dest(path.images.output), // dev output
+          pl.gulp.dest(path.images.build), // build output
+        ),
+      )
+
       // browser reload
-      .pipe(pl.browserSync.stream())
+      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
   );
 };
