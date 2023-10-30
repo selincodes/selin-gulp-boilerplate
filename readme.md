@@ -13,6 +13,7 @@ English | [Українська](/readme-ua.md)
 ## Table of contents
 
 - [Features](#features)
+- [System requirements](#system-requirements)
 - [Release Notes](#release-notes)
 
 ## Features
@@ -47,6 +48,11 @@ English | [Українська](/readme-ua.md)
 - [x] Local Server
 - [ ] User Settings
 - [ ] Utilities
+
+## System requirements
+
+- [Node.js 14+](https://nodejs.org/en)
+- [gulp-cli](https://gulpjs.com/docs/en/getting-started/quick-start/)
 
 ## Release Notes
 
