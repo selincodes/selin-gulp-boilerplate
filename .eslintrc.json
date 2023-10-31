@@ -18,6 +18,7 @@
     "no-console": "off",
     "no-multi-assign": "off",
     "no-param-reassign": "off",
-    "arrow-body-style":"off"
+    "arrow-body-style":"off",
+    "ExportDeclaration": { "multiline": true, "minProperties": 3 }
   }
 }

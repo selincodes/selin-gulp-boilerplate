@@ -8,6 +8,7 @@ import flatten from 'gulp-flatten';
 import browserSync from 'browser-sync';
 import sourceMaps from 'gulp-sourcemaps';
 import iif from 'gulp-if';
+import noop from 'gulp-noop';
 
 // HTML/Pug
 import gulpPug from 'gulp-pug';
@@ -51,6 +52,7 @@ export default {
   isBuild: process.argv.includes('--build'),
   isDev: !process.argv.includes('--build'),
   iif,
+  noop,
 
   // HTML/Pug
   gulpPug,
