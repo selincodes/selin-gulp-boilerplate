@@ -1,13 +1,15 @@
-import pl from '../../config/plugins.js';
+import plugins from '../../config/plugins.js';
+const { isDev, terserPlugin } = plugins;
 
 export default {
   webPack: {
-    mode: pl.isDev ? 'development' : 'production',
+    mode: isDev ? 'development' : 'production',
     output: {
       filename: 'bundle.js',
     },
     optimization: {
       minimize: true,
+      minimizer: [new terserPlugin()],
     },
     module: {
       rules: [
@@ -29,7 +31,7 @@ export default {
       ],
     },
   },
-  devtool: pl.isDev ? 'source-map' : false,
+  devtool: isDev ? 'source-map' : false,
   babel: {
     presets: ['@babel/preset-env'],
   },
