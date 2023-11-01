@@ -1,24 +1,22 @@
 // Import path and plugins
 import path from '../../config/path.js';
-import pl from '../../config/plugins.js';
+import plugins from '../../config/plugins.js';
 
 // Font conversion task
 export const fonts = () => {
+  const { isDev, ttf2woff, gulp, browserSync, noop } = plugins;
+  const { dest } = gulp;
+  const { output, build, src } = path.fonts;
+
   return (
-    pl.gulp
-      .src(path.fonts.src) // source directory
-      .pipe(pl.ttf2woff()) // conversion ttf to woff2
+    gulp
+      .src(src) // source directory
+      .pipe(ttf2woff()) // conversion ttf to woff2
 
       // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.fonts.output), // dev output
-          pl.gulp.dest(path.fonts.build), // build output
-        ),
-      )
+      .pipe(isDev ? dest(output) : dest(build)) // Output directory
 
       // browser reload
-      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
+      .pipe(isDev ? browserSync.stream() : noop())
   );
 };
