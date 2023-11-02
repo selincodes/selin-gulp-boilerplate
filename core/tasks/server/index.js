@@ -1,9 +1,12 @@
 // Import plugins
-import pl from '../../config/plugins.js';
+import plugins from '../../config/plugins.js';
 
 // Import task config
 import config from './config.js';
 
-export const server = (done) => {
-  pl.browserSync.init(config.browser);
+export const server = () => {
+  const { browserSync } = plugins;
+  const { browser: browserConfig } = config;
+
+  browserSync.init(browserConfig);
 };
