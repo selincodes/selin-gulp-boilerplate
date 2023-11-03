@@ -22,6 +22,11 @@
     "no-multi-assign": "off",
     "no-param-reassign": "off",
     "arrow-body-style": "off",
-    "object-curly-newline": ["error", { "consistent": true }]
+    "object-curly-newline": ["error", {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+    }]
   }
 }

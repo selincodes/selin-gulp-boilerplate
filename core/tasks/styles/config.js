@@ -2,10 +2,10 @@ export default {
   sassConfig: {
     outputStyle: 'expanded',
   },
-  rename: {
+  renameConfig: {
     suffix: '.min',
   },
-  cleanCSS: {
+  cleanConfig: {
     level: 2,
   },
 };

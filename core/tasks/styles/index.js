@@ -1,34 +1,44 @@
 // Import path and plugins
 import path from '../../config/path.js';
-import pl from '../../config/plugins.js';
+import plugins from '../../config/plugins.js';
 
 // Import task config
 import config from './config.js';
 
-const sass = pl.gsass(pl.sass);
+// const sass = pl.gsass(pl.sass);
 
 export const styles = () => {
+  const {
+    isDev,
+    gulp,
+    browserSync,
+    autoPrefixer,
+    cleanCSS,
+    rename,
+    gcmq,
+    sourceMaps,
+    noop,
+    gsass,
+    sass,
+  } = plugins;
+  const sassCompile = gsass(sass);
+  const { dest } = gulp;
+  const { sassConfig, renameConfig, cleanConfig } = config;
+  const { output, build, src } = path.styles;
+
   return (
-    pl.gulp
-      .src(path.styles.src) // source directory
-      .pipe(pl.iif(pl.isDev, pl.sourceMaps.init())) // init source maps
-      .pipe(sass(config.sassConfig)) // compiling scss
-      .pipe(pl.gcmq()) // grouping media queries
-      .pipe(pl.rename(config.rename)) // added suffix min to main.css
-      .pipe(pl.autoPrefixer()) // added auto prefixer
-      .pipe(pl.iif(pl.isBuild, pl.cleanCSS(config.cleanCSS))) // clean and minify css
-      .pipe(pl.iif(pl.isDev, pl.sourceMaps.write('../maps'))) // write source maps
+    gulp
+      .src(src) // source directory
+      .pipe(isDev ? sourceMaps.init() : noop()) // Init source maps
+      .pipe(sassCompile(sassConfig)) // compiling scss
+      .pipe(gcmq()) // grouping media queries
+      .pipe(rename(renameConfig)) // added suffix min to main.css
+      .pipe(autoPrefixer()) // added auto prefixer
+      .pipe(isDev ? noop() : cleanCSS(cleanConfig)) // clean and minify css
+      .pipe(isDev ? sourceMaps.write('../maps') : noop()) // write source maps
+      .pipe(isDev ? dest(output) : dest(build)) // Output directory
 
-      // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.styles.output), // dev output
-          pl.gulp.dest(path.styles.build), // build output
-        ),
-      )
-
-      // browser reload
-      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
+      // Browser reload
+      .pipe(isDev ? browserSync.stream() : noop())
   );
 };
