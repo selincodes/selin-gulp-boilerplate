@@ -1,22 +1,22 @@
 import pl from '../../config/plugins.js';
 
 export default {
-  webp: {
+  webpConfig: {
     quality: 80,
   },
-  imageMin: {
+  imageMinConfig: {
     progressive: true,
     svgoPlugin: [{ removeViewBox: false }],
     interlanced: true,
     optimizationLevel: 3,
     use: [pl.pngQuant()],
   },
-  svgmin: {
+  svgminConfig: {
     js2svg: {
       pretty: true,
     },
   },
-  cheerio: {
+  cheerioConfig: {
     run: ($) => {
       $('[fill]').removeAttr('fill');
       $('[stroke]').removeAttr('strole');
@@ -26,7 +26,7 @@ export default {
       xmlMode: true,
     },
   },
-  sprite: {
+  spriteConfig: {
     mode: {
       symbol: {
         sprite: '../sprite.svg',

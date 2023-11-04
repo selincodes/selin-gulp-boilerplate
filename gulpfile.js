@@ -17,14 +17,14 @@ const watcher = () => {
   // assets
   pl.gulp.watch(path.styles.src, styles); // styles from assets
   pl.gulp.watch(path.images.src, images); // images from assets
-  pl.gulp.watch(path.images.svg, copySVG); // svg from assets
-  pl.gulp.watch(path.images.sprite, sprite); // sprite
+  pl.gulp.watch(path.images.srcSvg, copySVG); // svg from assets
+  pl.gulp.watch(path.images.spriteSrc, sprite); // sprite
   pl.gulp.watch(path.fonts.src, fonts); // fonts
   pl.gulp.watch(`${path.scripts.src}/**/*.js`, scripts); // scripts from assets
 
   // modules
   pl.gulp.watch(`${path.src}/pug/modules/**/*.scss`, styles); // styles from modules
-  pl.gulp.watch(path.images.modules, images); // images from modules
+  pl.gulp.watch(path.images.modulesSrc, images); // images from modules
   pl.gulp.watch(path.images.modulesSvg, copySVG); // svg from modules
   pl.gulp.watch(`${path.src}/pug/modules/**/*.js`, scripts); // scripts from modules
 };

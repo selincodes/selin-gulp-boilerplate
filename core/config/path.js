@@ -13,11 +13,11 @@ export default {
   },
   images: {
     src: `${src}/assets/img/**/*.{jpg,jpeg,png,git}`,
-    svg: `${src}/assets/img/**/*.svg`,
+    srcSvg: `${src}/assets/img/**/*.svg`,
     output: `${output}/img`,
-    modules: `${src}/pug/modules/**/img/*.{jpg,jpeg,png,gif}`,
-    modulesSvg: `${src}/pug/modules/**/img/**/*.svg`,
-    sprite: `${src}/assets/sprite/*.svg`,
+    modulesSrc: `${src}/pug/modules/**/img/*.{jpg,jpeg,png,gif}`,
+    modulesSvg: `${src}/pug/modules/**/img/*.svg`,
+    spriteSrc: `${src}/assets/sprite/*.svg`,
     build: `${build}/img`,
   },
   fonts: {

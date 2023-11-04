@@ -1,111 +1,72 @@
 // Import path and plugins
 import path from '../../config/path.js';
-import pl from '../../config/plugins.js';
+import plugins from '../../config/plugins.js';
 
 // Import task config
 import config from './config.js';
 
+const {
+  isDev,
+  gulp,
+  browserSync,
+  noop,
+  flatten,
+  newer,
+  svgMin,
+  cheerio,
+  replace,
+  svgSprite,
+  webp,
+  imageMin,
+} = plugins;
+const { output, build, src, modulesSrc, srcSvg, modulesSvg, spriteSrc } = path.images;
+const { dest } = gulp;
+const { svgminConfig, cheerioConfig, spriteConfig, webpConfig, imageMinConfig } = config;
+
 // The task of moving svg images
 export const copySVG = () => {
   return (
-    pl.gulp
-      // svg
-      .src([path.images.svg, path.images.modulesSvg]) // source directory
-      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
-
-      // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.images.output), // dev output
-          pl.gulp.dest(path.images.build), // build output
-        ),
-      )
+    gulp
+      .src([srcSvg, modulesSvg]) // source directory
+      .pipe(flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(isDev ? newer(output) : noop()) // check if the file have changed
+      .pipe(isDev ? dest(output) : dest(build)) // output directory
 
       // browser reload
-      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
+      .pipe(isDev ? browserSync.stream() : noop())
   );
 };
 
 // The task of moving images
 export const images = () => {
-  const sizes = [400, 450, 800, 1000, 1300, 1650];
-  const sharpOptions = {
-    limitInputPixels: true,
-  };
   return (
-    pl.gulp
-      // resize images
-      .src([path.images.src, path.images.modules]) // source directory
-      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
-      .pipe(
-        pl.responsive({
-          sharpOptions,
-          sizes,
-        }),
-      )
-      // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.images.output), // dev output
-          pl.gulp.dest(path.images.build), // build output
-        ),
-      )
-
-      // webp
-      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
-      .pipe(pl.webp(config.webp)) // convert to webp
-      // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.images.output), // dev output
-          pl.gulp.dest(path.images.build), // build output
-        ),
-      )
-
-      // all images
-      .pipe(pl.flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
-      .pipe(pl.iif(pl.isDev, pl.newer(path.images.output))) // check if the files have changed
-      .pipe(pl.iif(pl.isBuild, pl.imageMin(config.imageMin)))
-      // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.images.output), // dev output
-          pl.gulp.dest(path.images.build), // build output
-        ),
-      )
+    gulp
+      .src([src, modulesSrc])
+      .pipe(flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(webp(webpConfig))
+      .pipe(gulp.src([src, modulesSrc]))
+      .pipe(flatten({ includeParents: -1, subPath: 1 })) // delete folder structure
+      .pipe(isDev ? newer(output) : noop()) // check if the file have changed
+      .pipe(isDev ? noop() : imageMin(imageMinConfig))
+      .pipe(isDev ? dest(output) : dest(build)) // output directory
 
       // browser reload
-      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
+      .pipe(isDev ? browserSync.stream() : noop())
   );
 };
 
 // The task of automactic creation sprite
 export const sprite = () => {
   return (
-    pl.gulp
-      .src(path.images.sprite) // source directory
-      .pipe(pl.svgMin(config.svgmin)) // icon optimization
-      .pipe(pl.cheerio(config.cheerio)) // removing attributes
-      .pipe(pl.replace('>', '>'))
-      .pipe(pl.svgSprite(config.sprite)) // removing attributes
-
-      // output directory
-      .pipe(
-        pl.iif(
-          pl.isDev, // is dev?
-          pl.gulp.dest(path.images.output), // dev output
-          pl.gulp.dest(path.images.build), // build output
-        ),
-      )
+    gulp
+      .src(spriteSrc) // source directory
+      .pipe(svgMin(svgminConfig)) // icon optimization
+      .pipe(cheerio(cheerioConfig)) // removing attributes
+      .pipe(replace('>', '>'))
+      .pipe(svgSprite(spriteConfig)) // create sprite
+      .pipe(isDev ? dest(output) : dest(build)) // output directory
 
       // browser reload
-      .pipe(pl.iif(pl.isDev, pl.browserSync.stream()))
+      .pipe(isDev ? browserSync.stream() : noop())
   );
 };
