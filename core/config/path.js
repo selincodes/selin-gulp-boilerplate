@@ -21,7 +21,8 @@ export default {
     build: `${build}/img`,
   },
   fonts: {
-    src: `${src}/assets/fonts/**/*.ttf`,
+    srcFonts: `${src}/assets/fonts/**/*.ttf`,
+    woffSrc: `${src}/assets/fonts/**/*.woff2`,
     output: `${output}/fonts`,
     build: `${build}/fonts`,
   },

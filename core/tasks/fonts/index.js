@@ -5,12 +5,18 @@ import plugins from '../../config/plugins.js';
 // Font conversion task
 export const fonts = () => {
   const { isDev, ttf2woff, gulp, browserSync, noop } = plugins;
-  const { dest } = gulp;
-  const { output, build, src } = path.fonts;
+  const { dest, src } = gulp;
+  const { output, build, srcFonts, woffSrc } = path.fonts;
 
   return (
     gulp
-      .src(src) // source directory
+      .src(woffSrc) // source directory
+
+      // output directory
+      .pipe(isDev ? dest(output) : dest(build)) // Output directory
+
+      .pipe(src(srcFonts))
+
       .pipe(ttf2woff()) // conversion ttf to woff2
 
       // output directory

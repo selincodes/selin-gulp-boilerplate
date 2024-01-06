@@ -19,7 +19,8 @@ const watcher = () => {
   pl.gulp.watch(path.images.src, images); // images from assets
   pl.gulp.watch(path.images.srcSvg, copySVG); // svg from assets
   pl.gulp.watch(path.images.spriteSrc, sprite); // sprite
-  pl.gulp.watch(path.fonts.src, fonts); // fonts
+  pl.gulp.watch(path.fonts.srcFonts, fonts); // fonts
+  pl.gulp.watch(path.fonts.woffSrc, fonts); // fonts
   pl.gulp.watch(`${path.scripts.src}/**/*.js`, scripts); // scripts from assets
 
   // modules
